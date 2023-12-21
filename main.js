@@ -7,26 +7,35 @@ let menu = Number (prompt(
     "1. Ventas"
 ));
 
-const Producto_1 = 'Anillo de esmeraldas 20k';
-const Precio_1 = 2500;
-const Producto_2 = 'Aretes de esmeraldas 15k';
-const Precio_2 = 3000;
-const Producto_3 = 'Pulsera tennis esmeraldas 10k';
-const Precio_3 = 10000;
+while (menu < 1 ||  isNaN(menu)) {
+    menu = Number(prompt(
+        "Menu:\n" +
+        "1. Ventas" 
+        
+    ));
+}
+
+
+const producto_1 = 'Anillo de esmeraldas 20k';
+const precio_1 = 2500;
+const producto_2 = 'Aretes de esmeraldas 15k';
+const precio_2 = 3000;
+const producto_3 = 'Pulsera tennis esmeraldas 10k';
+const precio_3 = 10000;
 
 let product = Number(prompt(
     "Que producto deseas comprar?:\n" +
-    `1. ${Producto_1}  $${Precio_1.toFixed(2)}\n` +
-    `2. ${Producto_2}  $${Precio_2.toFixed(2)}\n` +
-    `3. ${Producto_3}  $${Precio_3.toFixed(2)}`
+    `1. ${producto_1}  $${precio_1.toFixed(2)}\n` +
+    `2. ${producto_2}  $${precio_2.toFixed(2)}\n` +
+    `3. ${producto_3}  $${precio_3.toFixed(2)}`
 ));
 
 while (product < 1 || product > 3 || isNaN(product)) {
     product = Number(prompt(
         "Digite el numero del producto que desea comprar\n" +
-        `1. ${Producto_1}\n` +
-        `2. ${Producto_2}\n` +
-        `3. ${Producto_3}`
+        `1. ${producto_1}\n` +
+        `2. ${producto_2}\n` +
+        `3. ${producto_3}`
     ));
 }
 
@@ -34,21 +43,28 @@ let pago = Number(prompt(
     "Pagos:\n" +
     "1. Efectivo\n"
 ));
+while (pago < 1 ||  isNaN(pago)) {
+    pago = Number(prompt(
+        "Pago:\n" +
+        "1. Efectivo" 
+        
+    ));
+}
 
 let total;
 
 switch (product) {
     case 1 :
-        total = Precio_1;
+        total = precio_1;
         break;
         case 2 :
-            total = Precio_2;
+            total = precio_2;
             break;
             case 3 :
-                total = Precio_3
-                alert("Su pago total sera $" + total.toFixed())
-            
-}
+                total = precio_3
+                break;}
+                
+
 
 const nombre = prompt ("Ingresa tu nombre y apellido");
 if(nombre === "" || nombre === null){
@@ -63,6 +79,12 @@ if(direccion === "" || direccion === null){
 } else{
     alert("Tu direccion es:," + direccion);
 };
+const nombreDireccion = prompt("Tu pedido sera enviado a: ");
+if( nombreDireccion === "" || nombreDireccion === null){
+alert("Hubo un error, vuelve a ingresar tus datos")
+} else{
+    alert("Gracias por tu compra, tu pedido sera enviado a la direccion ingresada"  +  nombreDireccion);
+};
 
-alert("Gracias pr tu compra! Tu pedido sera enviado a la dirección registrada.")
-
+let arrayDatos = [nombre + direccion];
+console.log(nombreDireccion.length)
